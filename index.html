@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrazMotors - Cultura em Duas Rodas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans scroll-smooth">
+
+    <!-- Navbar -->
+    <header class="bg-gray-800 fixed w-full z-50 shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold text-brazblue">BrazMotors</h1>
+            <nav class="space-x-4">
+                <a href="#home" class="hover:text-brazblue">Início</a>
+                <a href="#sobre" class="hover:text-brazblue">Sobre</a>
+                <a href="#catalogo" class="hover:text-brazblue">Catálogo</a>
+                <a href="#loja" class="hover:text-brazblue">Loja</a>
+                <a href="#aulas" class="hover:text-brazblue">Aulas</a>
+                <a href="#contacto" class="hover:text-brazblue">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Início -->
+    <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1494972308805-463bc619d34e');">
+        <div class="bg-black bg-opacity-70 p-8 rounded-lg">
+            <h2 class="text-4xl font-extrabold mb-4 text-brazblue">Liberdade em Duas Rodas</h2>
+            <p class="mb-6 text-gray-300">Motociclos. Estilo. Atitude.</p>
+            <a href="#catalogo" class="bg-brazblue px-6 py-2 rounded-full text-white hover:bg-blue-700">Explorar</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-20 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-4">Sobre Nós</h3>
+            <p class="text-gray-400">
+                A BrazMotors é mais do que uma loja de motas — é um estilo de vida. Vendemos motociclos, equipamentos e promovemos a cultura motard com autenticidade e paixão.
+            </p>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">Catálogo de Motociclos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Exemplo de Moto -->
+                <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a" class="rounded mb-4" alt="Moto">
+                    <h4 class="text-xl font-semibold">Honda CB500</h4>
+                    <p class="text-gray-400">R$ 25.000 · 2022</p>
+                    <a href="#" class="mt-3 inline-block bg-brazblue px-4 py-2 rounded-full text-white hover:bg-blue-700">Ver Mais</a>
+                </div>
+                <!-- + Adicionar outras motos dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Loja -->
+    <section id="loja" class="py-20 px-6 bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">Loja de Acessórios & Merch</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-4 rounded shadow">
+                    <img src="https://images.unsplash.com/photo-1586790170182-611fe38abf67" class="rounded mb-4" alt="Capacete">
+                    <h4 class="font-semibold">Capacete Integral</h4>
+                    <p class="text-gray-300">R$ 350</p>
+                    <a href="#" class="text-brazblue hover:underline">Ver Produto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aulas -->
+    <section id="aulas" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-4">Aulas & Conteúdo</h3>
+            <p class="text-gray-400 mb-8">Aprende técnicas, manutenção e dicas exclusivas. Em breve, vídeos e cursos online.</p>
+            <a href="#" class="bg-brazblue px-6 py-2 rounded-full text-white hover:bg-blue-700">Saber Mais</a>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-6 text-center">Contacto</h3>
+            <form class="grid gap-4">
+                <input type="text" placeholder="Nome" class="p-3 rounded bg-gray-700 text-white">
+                <input type="email" placeholder="Email" class="p-3 rounded bg-gray-700 text-white">
+                <textarea placeholder="Mensagem" rows="4" class="p-3 rounded bg-gray-700 text-white"></textarea>
+                <button type="submit" class="bg-brazblue px-6 py-2 rounded text-white hover:bg-blue-700">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center text-gray-400">
+        <p>&copy; 2025 BrazMotors. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/351XXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600">
+        <i class="fab fa-whatsapp text-white text-xl"></i>
+    </a>
+</body>
+</html>
