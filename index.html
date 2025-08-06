@@ -6,56 +6,192 @@
     <title>BrazMotors - Cultura em Duas Rodas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white font-sans scroll-smooth">
 
     <!-- Navbar -->
-    <header class="bg-gray-800 fixed w-full z-50 shadow">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-brazblue">BrazMotors</h1>
-            <nav class="space-x-4">
-                <a href="#home" class="hover:text-brazblue">Início</a>
-                <a href="#sobre" class="hover:text-brazblue">Sobre</a>
-                <a href="#catalogo" class="hover:text-brazblue">Catálogo</a>
-                <a href="#loja" class="hover:text-brazblue">Loja</a>
-                <a href="#aulas" class="hover:text-brazblue">Aulas</a>
-                <a href="#contacto" class="hover:text-brazblue">Contacto</a>
-            </nav>
+    <header class="bg-gray-800 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-3xl font-bold text-brazblue hover:text-blue-400 transition duration-300">BrazMotors</h1>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-brazblue transition duration-300 font-medium">Início</a>
+                    <a href="#sobre" class="text-white hover:text-brazblue transition duration-300 font-medium">Sobre</a>
+                    <a href="#catalogo" class="text-white hover:text-brazblue transition duration-300 font-medium">Catálogo</a>
+                    <a href="#loja" class="text-white hover:text-brazblue transition duration-300 font-medium">Loja</a>
+                    <a href="#aulas" class="text-white hover:text-brazblue transition duration-300 font-medium">Aulas</a>
+                    <a href="#contacto" class="text-white hover:text-brazblue transition duration-300 font-medium">Contacto</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 text-white hover:text-brazblue">Início</a>
+                <a href="#sobre" class="block py-2 text-white hover:text-brazblue">Sobre</a>
+                <a href="#catalogo" class="block py-2 text-white hover:text-brazblue">Catálogo</a>
+                <a href="#loja" class="block py-2 text-white hover:text-brazblue">Loja</a>
+                <a href="#aulas" class="block py-2 text-white hover:text-brazblue">Aulas</a>
+                <a href="#contacto" class="block py-2 text-white hover:text-brazblue">Contacto</a>
+            </div>
         </div>
     </header>
 
-    <!-- Início -->
-    <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1494972308805-463bc619d34e');">
-        <div class="bg-black bg-opacity-70 p-8 rounded-lg">
-            <h2 class="text-4xl font-extrabold mb-4 text-brazblue">Liberdade em Duas Rodas</h2>
-            <p class="mb-6 text-gray-300">Motociclos. Estilo. Atitude.</p>
-            <a href="#catalogo" class="bg-brazblue px-6 py-2 rounded-full text-white hover:bg-blue-700">Explorar</a>
+    <!-- Hero Section -->
+    <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 transform transition-all duration-1000 hover:scale-105">
+            <div class="bg-black bg-opacity-70 p-12 rounded-xl backdrop-blur-sm border border-gray-700 shadow-2xl">
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-6 text-brazblue animate-fade-in">BrazMotors - Cultura Motociclística</h2>
+                <p class="mb-8 text-xl text-gray-300 font-light">Liberdade • Estilo • Performance</p>
+                <a href="#catalogo" class="bg-brazblue px-8 py-3 rounded-full text-white hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-lg font-medium">
+                    Explorar <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
         </div>
+        <a href="#sobre" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
     </section>
 
-    <!-- Sobre -->
+    <!-- About Section -->
     <section id="sobre" class="py-20 px-6 bg-gray-800">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-4">Sobre Nós</h3>
-            <p class="text-gray-400">
-                A BrazMotors é mais do que uma loja de motas — é um estilo de vida. Vendemos motociclos, equipamentos e promovemos a cultura motard com autenticidade e paixão.
-            </p>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold mb-6 text-brazblue">Sobre a BrazMotors</h3>
+                    <p class="text-gray-300 mb-6">
+                        Fundada em 2010, a BrazMotors nasceu da paixão por motocicletas e da vontade de criar uma comunidade vibrante. Somos mais que uma concessionária - somos um estilo de vida.
+                    </p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brazblue mr-2"></i> +1000 clientes satisfeitos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brazblue mr-2"></i> 12 anos no mercado</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brazblue mr-2"></i> Oficina especializada</li>
+                    </ul>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96" alt="Equipe BrazMotors" class="w-full h-auto">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Catálogo -->
+    <!-- Motorcycle Catalog -->
     <section id="catalogo" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center">Catálogo de Motociclos</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Exemplo de Moto -->
-                <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a" class="rounded mb-4" alt="Moto">
-                    <h4 class="text-xl font-semibold">Honda CB500</h4>
-                    <p class="text-gray-400">R$ 25.000 · 2022</p>
-                    <a href="#" class="mt-3 inline-block bg-brazblue px-4 py-2 rounded-full text-white hover:bg-blue-700">Ver Mais</a>
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-4">Nossas Motocicletas</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">Seleção premium das melhores marcas do mercado</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bike 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e52803e9cd14" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Honda CB500X">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-brazblue text-white px-3 py-1 rounded-full text-xs font-bold">NOVO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Honda CB500X</h4>
+                            <span class="text-brazblue font-bold">R$ 35.900</span>
+                        </div>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i> 2023 | 
+                            <i class="fas fa-tachometer-alt ml-3 mr-2"></i> 0 km
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-brazblue hover:underline font-medium">Detalhes</a>
+                            <a href="#" class="bg-brazblue hover:bg-blue-700 text-white px-4 py-2 rounded-full transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Contato
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <!-- + Adicionar outras motos dinamicamente -->
+
+                <!-- Bike 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Yamaha MT-07">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">PROMOÇÃO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Yamaha MT-07</h4>
+                            <span class="text-brazblue font-bold">R$ 42.500</span>
+                        </div>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i> 2022 | 
+                            <i class="fas fa-tachometer-alt ml-3 mr-2"></i> 8.500 km
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-brazblue hover:underline font-medium">Detalhes</a>
+                            <a href="#" class="bg-brazblue hover:bg-blue-700 text-white px-4 py-2 rounded-full transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="BMW R 1250 GS">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">BMW R 1250 GS</h4>
+                            <span class="text-brazblue font-bold">R$ 89.900</span>
+                        </div>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i> 2021 | 
+                            <i class="fas fa-tachometer-alt ml-3 mr-2"></i> 15.200 km
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-brazblue hover:underline font-medium">Detalhes</a>
+                            <a href="#" class="bg-brazblue hover:bg-blue-700 text-white px-4 py-2 rounded-full transition duration-300">
+                                <i class="fas fa-phone-alt mr-2"></i> Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-brazblue hover:bg-blue-700 text-white px-8 py-3 rounded-full transition duration-300 font-medium shadow-lg">
+                    <i class="fas fa-biking mr-2"></i> Ver Todo o Catálogo
+                </a>
             </div>
         </div>
     </section>
@@ -103,8 +239,31 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/351XXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600">
-        <i class="fab fa-whatsapp text-white text-xl"></i>
+    <a href="https://wa.me/351XXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 group">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+        <span class="absolute right-full mr-2 px-2 py-1 bg-green-500 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">
+            Fale conosco
+        </span>
     </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Hide mobile menu after click
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
